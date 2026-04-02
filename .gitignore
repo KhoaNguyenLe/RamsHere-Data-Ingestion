@@ -1,0 +1,27 @@
+# Node modules (as requested)
+node_modules/
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment Variables
+.env
+.env.local
+
+# Django Database (Local)
+db.sqlite3
+db.sqlite3-journal
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
