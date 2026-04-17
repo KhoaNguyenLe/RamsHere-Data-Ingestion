@@ -29,9 +29,9 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = 'django-insecure-s0md!g_&631oj*qo#%k%-!4@3#cdf_#t#=wjpy%nwspro7p&ro'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ramshere-data-ingestion.onrender.com', 'localhost', '127.0.0.1', '*']
 
 
 # Application definition
