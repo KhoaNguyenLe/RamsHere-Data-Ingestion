@@ -137,3 +137,15 @@ class WeeklyMaterialsFilesView(APIView):
             
         except requests.exceptions.RequestException as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+from rest_framework import generics
+from .models import Event
+from .serializers import EventSerializer
+
+class EventListCreateView(generics.ListCreateAPIView):
+    queryset = Event.objects.all().order_by('-date')
+    serializer_class = EventSerializer
+
+class EventDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
